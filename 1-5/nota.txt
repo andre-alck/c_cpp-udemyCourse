@@ -1,4 +1,0 @@
-essas foram as aulas introdutórias.
-• foi introduzida a programação em c++
-• foi ensinado como instalar e utilizar algum ambiente de desenvolvimento
-• foi ensinado como imprimir uma mensagem na tela com cout.
