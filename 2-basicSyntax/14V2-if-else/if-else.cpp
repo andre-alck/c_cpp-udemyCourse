@@ -25,12 +25,15 @@ using std::endl;
 using std::flush;
 using std::string;
 
+/*
+The original password the user should know (in case he wants tochange it) is "pass123".
+*/
+string password = "pass123";
+
+void passwordManipulation(string input);
+
 int main(void)
 {
-    /*
-    The original password the user should know (in case he wants to change it) is "pass123".
-    */
-    string password = "pass123";
     cout << "Would you like to change the password?" << endl
          << endl;
 
@@ -45,10 +48,18 @@ int main(void)
     string userSelection;
     getline(cin, userSelection);
 
-    /*
-    If the user inserts anything besides "y" or "n", the program will quit since the getline() function receives as input a whole line.
-    */
-    if (userSelection == "y")
+    passwordManipulation(userSelection);
+
+    cout << endl
+         << "Quitting application..." << flush;
+
+    getchar();
+    return EXIT_SUCCESS;
+}
+
+void passwordManipulation(string input)
+{
+    if (input == "y")
     {
         cout << "You have chosen to change the password." << endl
              << endl;
@@ -65,17 +76,13 @@ int main(void)
             cout << flush;
         }
 
-        cout << "Insert the new password: " << flush;
+        cout << endl
+             << "Insert the new password: " << flush;
         getline(cin, password);
         cout << "The new password is: " << password << endl;
     }
-    else if (userSelection == "n")
+    else if (input == "n")
     {
         cout << "You have chosen to not change the password." << endl;
     }
-
-    cout << endl;
-    cout << "Quitting application..." << flush;
-    getchar();
-    return 0;
 }
