@@ -15,9 +15,11 @@ Program description:
     The program quits.
 */
 
-#include <iostream>
-#include <string>
 #include <cstring>
+#include <iostream>
+#include <stdio.h>
+#include <string>
+#include <ostream>
 
 using std::cin;
 using std::cout;
@@ -30,6 +32,9 @@ The original password the user should know (in case he wants tochange it) is "pa
 */
 string password = "pass123";
 
+/*
+Prototyping the passwordManipulation() function.
+*/
 void passwordManipulation(string input);
 
 int main(void)
@@ -42,7 +47,7 @@ int main(void)
          << endl;
 
     /*
-    The user decision is stored in an string variable to be able to use the getline function, this way there wont be any problem with white spaces.
+    The user decision is stored in an string variable to be able to use the getline function, this way there won't be any problem with white spaces.
     */
     cout << "Enter your selection: " << flush;
     string userSelection;
@@ -65,8 +70,8 @@ void passwordManipulation(string input)
              << endl;
 
         /*
-        Again, a new string variable is create so there wont be any problem with white spaces.
-	    If the user types a wrong password, the while loop will ensure that he wont be able to proceed withou knowing the right password.
+        Again, a new string variable is created so there won't be any problems with white spaces.
+	    If the user types a wrong password, the while loop will ensure that he won't be able to proceed withou knowing the right password.
         */
         string userPassword;
         while (userPassword != password)
