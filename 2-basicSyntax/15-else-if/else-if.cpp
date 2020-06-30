@@ -51,7 +51,7 @@ The original standard username.
 string username = "user01";
 
 /*
-The original password the user should know (in case he wants tochange it) is "pass123".
+The original password the user should know (in case he wants to change it) is "pass123".
 */
 string password = "pass123";
 
