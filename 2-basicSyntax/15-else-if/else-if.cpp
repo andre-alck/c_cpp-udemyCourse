@@ -23,7 +23,7 @@ Program description:
             Asks if the user wants to run the program again.
         }
 
-        If the user inserts any number bigger than 0, it will run again, otherwise, the program will quit.
+        If the user inserts any number except 0, it will run again, otherwise, the program will quit.
 */
 
 #include <cstring>
@@ -73,8 +73,8 @@ int main(void)
         checkCoice(userSelection);
 
         /*
-        If the user inserts 1 or any number bigger than 0: the program will restart.
-        If the user inserts 0: the program will quit.
+        If the user inserts 0, the program will break.
+        If the user inserts any number different than 0, the while loop will be evaluated to true.
         */
         cout << endl
              << "0.\tQuit." << endl;
@@ -82,9 +82,14 @@ int main(void)
         cout << endl
              << "Enter a number to select an option: " << flush;
         cin >> x;
+
+        if (x == 0)
+        {
+            break;
+        }
         cout << endl;
         clearConsole();
-    } while (x > 0);
+    } while (true);
 
     cout << "Quitting application...";
     return EXIT_SUCCESS;
