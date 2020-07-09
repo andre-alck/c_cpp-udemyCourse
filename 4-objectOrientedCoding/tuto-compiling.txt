@@ -1,0 +1,47 @@
+Basic compilation with multiple files without an IDE:
+
+
+
+
+
+main.cpp:
+#include "headerfile.hpp"
+
+int main(void) {
+    foo();
+
+    return 0;
+}
+
+
+
+
+
+otherFile.cpp:
+#include <iostream>
+
+void foo(void)
+{
+    std::cout << "any text" << std::endl;
+}
+
+
+
+
+
+headerfile.hpp:
+#ifndef NOISE_H
+#define NOISE_H
+
+void noise(void);
+
+#endif
+
+
+
+
+
+To compile using MinGW:
+g++ -c main.cpp
+g++ -c otherFile.cpp
+g++ -o executablename main.o otherFile.o //Linking process
