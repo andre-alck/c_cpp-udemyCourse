@@ -1,0 +1,1 @@
+I made this code for practicing classes + clean code.
