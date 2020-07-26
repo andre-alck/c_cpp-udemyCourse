@@ -1,43 +1,46 @@
 #include <iostream>
 #include <string>
 
-#define LAST_POSITION 2
-
-void newLine(void);
-
-int main(void) {
-    int numbers[] = {
-        1,
-        2,
-        3
+int main (void) {
+    std::string texts[] = {
+        "one",
+        "two",
+        "three"
     };
 
-    int *pNumbers = numbers;
+    int sizeArray = sizeof(texts) / sizeof(texts[0]);
 
-    for (int i = 0; i < sizeof(numbers) / sizeof(numbers[0]); i++) {
-        std::cout << pNumbers[i] << " " << std::flush;
-    } /* pNumbers doesn't need a * because the value is already being accessed through i */
-    newLine();
+    std::string* pTexts = texts; //std::string* pTexts = texts is equal to std::string* pTexts = &texts[0];
 
-    for (int i = 0; i < sizeof(numbers) / sizeof(numbers[0]); i++, pNumbers++) {
-        std::cout << *pNumbers << " " << std::flush;
-    } /* The pointer will point to each element of the array by increasing it's own value.*/
-    newLine();
+    for (int i = 0; i < sizeArray; i++) {
+        std::cout << pTexts[i] << " " << std::flush;
+    }
 
-    int *pElement = numbers;
-    int *pEnd = &numbers[LAST_POSITION];
-    
-    for (int i = 0; i < sizeof(numbers) / sizeof(numbers[0]); i++) {
-        std::cout << pElement[i] << " " << std::flush;
+    std::cout << std::endl;
 
-        if (pElement[i] == *pEnd) {
+    for (int i = 0; i < sizeArray; i++, pTexts++) {
+        std::cout << *pTexts << " " << std::flush;
+    }
+
+    std::string* pElement = texts; //first element of the array
+    std::string* pEnd = &texts[2]; //last element of the array
+
+    /*
+    std::cout << "pElement: " << pElement << std::endl;
+    std::cout << "&texts[0]: " << &texts[0] << std::endl;
+    std::cout << "&texts[1]: " << &texts[1] << std::endl;
+    std::cout << "*pElement: " << *pElement << std::endl;
+    */
+
+    while (true) {
+        std::cout << *pElement << " " << std::flush;
+
+        if (pElement == pEnd) {
             break;
         }
+
+        pElement++;
     }
 
     return 0;
-}
-
-void newLine(void) {
-    std::cout << std::endl;
 }
