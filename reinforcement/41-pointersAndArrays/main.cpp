@@ -30,8 +30,8 @@ int main(void) {
 
 	float* ptrElements = arr;
 	float* ptrEnd = &arr[lastIndex];
-
 	std::cout << std::endl;
+	
 	std::cout << "3. " << std::flush;
 	while (true) {
 		std::cout << *ptrElements << " " << std::flush;

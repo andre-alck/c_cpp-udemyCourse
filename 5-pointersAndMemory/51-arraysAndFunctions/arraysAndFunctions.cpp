@@ -50,8 +50,3 @@ int main(void) {
 
 	return 0;
 }
-
-/*
- * TODO
- * understand the last part of the video, which includes a function that returns a pointer.
- */
