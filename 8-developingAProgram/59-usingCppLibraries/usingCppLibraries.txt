@@ -1,0 +1,20 @@
+Libraries
+
+Steps:
+1. Preprocessor -> #
+2. Compilation -> .o
+3. Linking:
+	a. (Windows) .exe
+	b. (Unix) no suffix
+
+Static libraries -> compiled into your program.
+Dynamic libraries -> program finds relevant code at runtime.
+
+Static:
+	Windows - XYZ.lib
+	Unix/Linux - libXYZ.a
+
+Dynamic:
+	Windows - XYZ.dll
+	Unix/Linux/Mac - libXYZ.so
+	Mac: XYZ.dylib
